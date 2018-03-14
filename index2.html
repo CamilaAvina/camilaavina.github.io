@@ -12,8 +12,8 @@
 	</head>
 	<body>
 		
-		<script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
-		<script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="js/Detector.js"></script>
 		<script>
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -24,8 +24,7 @@
 			function setup() {
 
 				var W = window.innerWidth, H = window.innerHeight;
-				renderer = new THREE.WebGLRenderer( { preserveDrawingBuffer: true } );
-				renderer.autoClearColor = false;
+				renderer = new THREE.WebGLRenderer();
 				renderer.setSize( W, H );
 				document.body.appendChild( renderer.domElement );
 
@@ -35,15 +34,10 @@
 				scene = new THREE.Scene();
 				
 				
-				map = THREE.ImageUtils.loadTexture('../texturez/proxy.php?url=paste a valid image url here');
-				geometry = new THREE.TetrahedronGeometry(150, 0);
+				geometry = new THREE.CubeGeometry(200, 200, 200);
 				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 				mesh = new THREE.Mesh(geometry, material);
-				map.wrapS = map.wrapT = THREE.RepeatWrapping;
-				map.repeat.set( 3.048434085943191, 3.048434085943191 );
-				mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.08;
 				scene.add(mesh);
-
 
 
 			}
@@ -52,11 +46,12 @@
 
 				requestAnimationFrame( draw );
 				
-				var randomColor = Math.random() * 0xffffff;
-				mesh.material.color.setHex(randomColor);
+				mesh.rotation.x = Date.now() * 0.0005;	
+				mesh.rotation.y = Date.now() * 0.0002;	
+				mesh.rotation.z = Date.now() * 0.001;
+
 				renderer.render( scene, camera );
-				mesh.position.x = Math.sin( Date.now() * 0.001 ) * 50;  
-				mesh.rotation.z = Date.now() * 0.0005;
+
 			}
 
 			setup();
