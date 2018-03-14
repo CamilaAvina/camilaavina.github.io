@@ -1,9 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>CAG4LIFE</title>
-</head>
-<body>
-Hello this is a test
-</body>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			body {
+				background-color: #ffffff;
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
+		<script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
+		<script>
+
+			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+			
+			var camera, scene, renderer;
+			var geometry, material, mesh;
+
+			function setup() {
+
+				var W = window.innerWidth, H = window.innerHeight;
+				renderer = new THREE.WebGLRenderer( { preserveDrawingBuffer: true } );
+				renderer.autoClearColor = false;
+				renderer.setSize( W, H );
+				document.body.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+				camera.position.z = 500;
+
+				scene = new THREE.Scene();
+				
+				
+				map = THREE.ImageUtils.loadTexture('../texturez/proxy.php?url=paste a valid image url here');
+				geometry = new THREE.TetrahedronGeometry(150, 0);
+				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+				mesh = new THREE.Mesh(geometry, material);
+				map.wrapS = map.wrapT = THREE.RepeatWrapping;
+				map.repeat.set( 3.048434085943191, 3.048434085943191 );
+				mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.08;
+				scene.add(mesh);
+
+
+
+			}
+
+			function draw() {
+
+				requestAnimationFrame( draw );
+				
+				var randomColor = Math.random() * 0xffffff;
+				mesh.material.color.setHex(randomColor);
+				renderer.render( scene, camera );
+				mesh.position.x = Math.sin( Date.now() * 0.001 ) * 50;  
+				mesh.rotation.z = Date.now() * 0.0005;
+			}
+
+			setup();
+			draw();
+
+		</script>
+		
+	</body>
 </html>
