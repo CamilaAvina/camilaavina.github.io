@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<style>
-			body {
-				background-color: #ffffff;
-				margin: 0;
-				overflow: hidden;
-			}
-		</style>
-	</head>
-	<body>
-		
-		<script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
-        <script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
-		<script>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                background-color: #ffffff;
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <script src="js/three.min.js"></script>
+        <script src="js/Detector.js"></script>
+        <script>
 
-			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-			
-			var camera, scene, renderer;
-			var geometry, material, mesh;
+            if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+            
+            var camera, scene, renderer;
+            var geometry, material, mesh;
 
-			function setup() {
+            function setup() {
 
-				var W = window.innerWidth, H = window.innerHeight;
-				renderer = new THREE.WebGLRenderer( { preserveDrawingBuffer: true } );
-				renderer.autoClearColor = false;
-				renderer.setSize( W, H );
-				document.body.appendChild( renderer.domElement );
+                var W = window.innerWidth, H = window.innerHeight;
+                renderer = new THREE.WebGLRenderer( { preserveDrawingBuffer: true } );
+                renderer.autoClearColor = false;
+                renderer.setSize( W, H );
+                document.body.appendChild( renderer.domElement );
 
-				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
-				camera.position.z = 500;
+                camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+                camera.position.z = 500;
 
-				scene = new THREE.Scene();
-				
-				
-					var points = [
+                scene = new THREE.Scene();
+                
+                
+                    var points = [
     new THREE.Vector3( 100, 0, -40 ),
     new THREE.Vector3( 111.68, 0, -36 ),
     new THREE.Vector3( 121.52, 0, -32 ),
@@ -176,35 +176,47 @@ spotLight2.castShadow = true;
 spotLight2.shadowDarkness = 0.2;
 scene.add( spotLight2 );
 
+geometry = new THREE.Geometry();
+                for ( i = 0; i < 5000; i ++ ) {
+                    var vertex = new THREE.Vector3();
+                    vertex.x = 1000 * Math.random() - 500;
+                    vertex.y = 1000 * Math.random() - 500;
+                    vertex.z = 1000 * Math.random() - 500;
+                    geometry.vertices.push( vertex );
+                }
+                material = new THREE.ParticleBasicMaterial( { size: 5, sizeAttenuation: false, transparent: true } );
+                material.color.setHex( 0xff00ff );
+                particles = new THREE.ParticleSystem( geometry, material );
+                particles.sortParticles = true;
+                scene.add( particles );
 
 
-			}
 
-			function draw() {
+            }
 
-				requestAnimationFrame( draw );
-				
-				camera.position.x = Math.sin( Date.now() * 0.002 ) * 50;
+            function draw() {
 
-				renderer.render( scene, camera );
-				
-				var randomColor = Math.random() * 0xffffff;
-				mesh.material.color.setHex(randomColor);
-				mesh.position.x = Math.sin( Date.now() * 0.001 ) * 50;  
-				mesh.rotation.z = Date.now() * 0.0005;
+                requestAnimationFrame( draw );
+                
+                camera.position.x = Math.sin( Date.now() * 0.002 ) * 50;
 
-				
-			}
+                renderer.render( scene, camera );
+                
+                var randomColor = Math.random() * 0xffffff;
+                mesh.material.color.setHex(randomColor);
+                mesh.position.x = Math.sin( Date.now() * 0.001 ) * 50;  
+                mesh.rotation.z = Date.now() * 0.0005;
 
-			setup();
-			draw();<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<style>
-			body {
-				background-color: #ffffff;
-				margin: 0;
-				overflow: hidden;
-			}
-	
+                particles.rotation.y = Date.now() * 0.00005;
+                var time = Date.now() * 0.0005;
+                h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
+                material.color.setHSL( h, 0.5, 0.5 );
+            }
+
+            setup();
+            draw();
+
+        </script>
+        
+    </body>
+</html>
