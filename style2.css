@@ -36,7 +36,7 @@ body {
   width: auto;
   height: 40px;
   list-style: none;
-  margin: 10px 0 0 0; 
+  margin: 10px 0 0 0;
   padding: 25px 10px;
   border-top: 4px double #AAA;
   border-bottom: 4px double #AAA;
@@ -65,20 +65,20 @@ body {
   text-decoration: none;
   position: relative;
   z-index: 1;
-  text-shadow: 
-		1px 1px 0px #FFF, 
+  text-shadow:
+		1px 1px 0px #FFF,
 		2px 2px 0px #999,
 		3px 3px 0px #FFF;
 	background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.05) 100%);
 	-webkit-transition: 1s all;
-	background-image: -webkit-linear-gradient(left top, 
-		transparent 0%, transparent 25%, 
-		rgba(0,0,0,.15) 25%, rgba(0,0,0,.15) 50%, 
-		transparent 50%, transparent 75%, 
+	background-image: -webkit-linear-gradient(left top,
+		transparent 0%, transparent 25%,
+		rgba(0,0,0,.15) 25%, rgba(0,0,0,.15) 50%,
+		transparent 50%, transparent 75%,
 		rgba(0,0,0,.15) 75%);
   background-size: 4px 4px;
-	box-shadow: 
-		0 0 0 1px rgba(0,0,0,.4) inset, 
+	box-shadow:
+		0 0 0 1px rgba(0,0,0,.4) inset,
 		0 0 20px -5px rgba(0,0,0,.4),
 		0 0 0px 3px #FFF inset;
 }
@@ -103,7 +103,7 @@ body {
 #menu li:after {
 	background-image: -webkit-linear-gradient(left, transparent 0%, rgba(0,0,0,.4) 100%);
   right: 0;
-  top: -4px; 
+  top: -4px;
 }
 #menu li:before {
   left: 0;
@@ -124,14 +124,14 @@ h2{
   padding: 400px;
 }
 
-footer { 
+footer {
     display: block;
 }
 
 
 #photo{
     padding-top: 150px;
-    
+
   }
 
 #sketch{
@@ -148,7 +148,7 @@ p{
   font-weight: 50;
   letter-spacing: -3px;
   line-height: 0.5;
- 
+
   }
 
 
@@ -171,13 +171,14 @@ p{
     padding-top: 200px;
     font-size: 80px;
 
-  
+
   }
 
   #art{
      text-align: center;
      font-family: 'Open Sans', sans-serif;
      font-size: 50px;
+     letter-spacing: -3px;
      color: #dc143c;
      }
 #sound{
