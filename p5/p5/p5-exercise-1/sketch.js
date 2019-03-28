@@ -1,28 +1,44 @@
-/* comments out big chunks*/
+/* comments out big chunks*/ //console.log("hi internet");//
 let carX = 50;
 let vroom;
+let carSpeed = 3;
+let carAcc =0.5
+let raceStarted
 
 function setup() { // setup only happens once//
   createCanvas(500, 500);
-vroom = new p5.Oscillator('square');
-  console.log("hi internet");
-  vroom.start
+  vroom = new p5.Oscillator('square');
+
 }
 //ctrl l high light; ctrl+shift d duplicates lines ctrl d to highlight same word
 
 function draw() { //draw happens over and over and over//
 
   background(150, 50, 255, 80);
+  // make start button
+  rect(0, height - 50, 50, 50); // later we can make it say start
 
-vroom.freq(carX);
-  if (frameCount > 120) {
+  vroom.freq(carX);
+
+
+if (mouseIsPressed && mouseX >= 0 && mouseX <=50 && mouseY <= height  && mouse >= height-50) {
+raceStarted =!raceStarted;
+vroom.start();
+vroom.amp(.05);
+}
+//  if (frameCount > 120) {
     //what moves the carX
+
+  if (raceStarted == true){
     if (carX >= 500) {
       carX = -50
-    } else if (carX >= 300) {
+      carSpeed = 3;
+    } else{
+       carSpeed += carAcc;
+       carX += carSpeed;  /*if (carX >= 300) {
       carX += 6
     } else {
-      carX += 3; // incromenter in the code //  console.log( carX);   //carX ++;   //  carX = carX + 3;
+      carX += 3; // incromenter in the code //  console.log( carX);   //carX ++;   //  carX = carX + 3;*/
     }
   }
 
@@ -41,7 +57,7 @@ vroom.freq(carX);
 
 
 }
-
+// mute it with mousePressed
 function mousePressed() {
-vroom.stop();
+  vroom.stop();
 }
