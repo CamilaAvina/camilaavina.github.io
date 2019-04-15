@@ -4,21 +4,24 @@ let notes = [ 60, 62, 64, 65, 67, 69, 71];
 // For automatically playing the song
 let index = 0;
 let song = [
-  { note: 4, duration: 400, display: "D" },
-  { note: 0, duration: 200, display: "G" },
-  { note: 1, duration: 200, display: "A" },
-  { note: 2, duration: 200, display: "B" },
-  { note: 3, duration: 200, display: "C" },
-  { note: 4, duration: 400, display: "D" },
-  { note: 0, duration: 400, display: "G" },
-  { note: 0, duration: 400, display: "G" }
+   {note: 4, duration: 400, display: "D" },
+   {note: 0, duration: 200, display: "G" },
+   {note: 1, duration: 200, display: "A" },
+   {note: 2, duration: 200, display: "B" },
+   {note: 3, duration: 200, display: "C" },
+   {note: 4, duration: 400, display: "D" },
+   {note: 0, duration: 400, display: "G" },
+   {note: 0, duration: 400, display: "G" }
 ];
 let trigger = 0;
-let autoplay = true;
+let autoplay = false;
 let osc;
-
+function preload(){
+  //sound = loadSound('p5/p5/p5-exersise-1/sound/alarm.mp3.mp3');
+}
 function setup() {
   createCanvas(1000, 650);
+//  let notes= [];
   let div = createDiv("Click to play notes or ")
   div.id("instructions");
   let button = createButton("play song automatically.");
@@ -28,6 +31,7 @@ function setup() {
     if (!autoplay) {
       index = 0;
       autoplay = true;
+    //  sound.play();
     }
   });
 
@@ -76,7 +80,7 @@ function draw() {
     if (mouseX > x && mouseX < x + w && mouseY < height) {
       // If we're clicking
       if (mouseIsPressed) {
-        fill(100,255,200);
+        fill(200,255,150);
       // Or just rolling over
       } else {
         fill(127);
