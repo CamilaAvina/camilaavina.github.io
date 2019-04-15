@@ -5,24 +5,28 @@ let notes = [ 60, 62, 64, 65, 67, 69, 71];
 let index = 0;
 let song = [
    {note: 4, duration: 400, display: "D" },
-   {note: 0, duration: 200, display: "G" },
+   {note: 6, duration: 200, display: "G" },
    {note: 1, duration: 200, display: "A" },
    {note: 2, duration: 200, display: "B" },
    {note: 3, duration: 200, display: "C" },
    {note: 4, duration: 400, display: "D" },
    {note: 0, duration: 400, display: "G" },
-   {note: 0, duration: 400, display: "G" }
+   {note: 5, duration: 400, display: "G" },
+   {note: 6, duration: 400, display: "G" }
 ];
 let trigger = 0;
 let autoplay = false;
 let osc;
-
+/*function preload(){
+  mySound= loadSound('p5/p5/p5-exercise-1/sound/elephant.mp3');
+}*/
 
 function setup() {
   createCanvas(1000, 650);
+
   let div = createDiv("Click to play notes or ")
   div.id("instructions");
-  let button = createButton("play song automatically.");
+  let button = createButton("play song.");
   button.parent("instructions");
   // Trigger automatically playing
   button.mousePressed(function() {
@@ -55,7 +59,8 @@ function playNote(note, duration) {
 }
 
 function draw() {
-
+/*  mySound.setVolume(0.1);
+  mySound.play();*/
   // If we are autoplaying and it's time for the next note
   if (autoplay && millis() > trigger){
     playNote(notes[song[index].note], song[index].duration);
@@ -89,7 +94,7 @@ function draw() {
 
     // Or if we're playing the song, let's highlight it too
     if (autoplay && i === song[index-1].note) {
-      fill(100,255,200);
+      fill(200,100,200);
     }
 
     // Draw the key
