@@ -16,12 +16,10 @@ let song = [
 let trigger = 0;
 let autoplay = false;
 let osc;
-function preload(){
-  //sound = loadSound('p5/p5/p5-exersise-1/sound/alarm.mp3.mp3');
-}
+
+
 function setup() {
   createCanvas(1000, 650);
-//  let notes= [];
   let div = createDiv("Click to play notes or ")
   div.id("instructions");
   let button = createButton("play song automatically.");
@@ -31,7 +29,6 @@ function setup() {
     if (!autoplay) {
       index = 0;
       autoplay = true;
-    //  sound.play();
     }
   });
 
@@ -40,6 +37,7 @@ function setup() {
   // Start silent
   osc.start();
   osc.amp(0);
+
 }
 
 // A function to play a note
