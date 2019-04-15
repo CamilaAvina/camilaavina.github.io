@@ -14,11 +14,11 @@ let song = [
   { note: 0, duration: 400, display: "G" }
 ];
 let trigger = 0;
-let autoplay = false;
+let autoplay = true;
 let osc;
 
 function setup() {
-  createCanvas(720, 400);
+  createCanvas(1000, 650);
   let div = createDiv("Click to play notes or ")
   div.id("instructions");
   let button = createButton("play song automatically.");
