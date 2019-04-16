@@ -16,18 +16,36 @@ let song = [
 ];
 let trigger = 0;
 let autoplay = false;
-let osc;
-/*function preload(){
-  mySound= loadSound('p5/p5/p5-exercise-1/sound/elephant.mp3');
-}*/
+let osc = new p5.TriOsc();;
+
+let mySound1
+let mySound2
+let mySound3
+let mySound4
+let mySound5
+let mySound6
+let mySound7
+
+
+function preload(){
+
+  mySound1 = loadSound ('sound/elephant.mp3'),
+  mySound2 = loadSound ('sound/alarm.mp3'),
+  mySound3 = loadSound ('sound/bubbles.mp3'),
+  mySound4 = loadSound ('sound/cinematic.mp3'),
+  mySound5 = loadSound ('sound/explosion.mp3'),
+  mySound6 = loadSound ('sound/race_car.mp3'),
+  mySound7 = loadSound ('sound/toilet.mp3');
+}
 
 function setup() {
   createCanvas(1000, 650);
 
-  let div = createDiv("Click to play notes or ")
+  let div = createDiv("Click to play notes or ");
   div.id("instructions");
   let button = createButton("play song.");
   button.parent("instructions");
+
   // Trigger automatically playing
   button.mousePressed(function() {
     if (!autoplay) {
@@ -37,15 +55,15 @@ function setup() {
   });
 
   // A triangle oscillator
-  osc = new p5.TriOsc();
+//  osc = new p5.TriOsc();
   // Start silent
-  osc.start();
-  osc.amp(0);
+//  osc.start();
+//  osc.amp(0);
 
 }
 
 // A function to play a note
-function playNote(note, duration) {
+function playNote(note,duration) {
   osc.freq(midiToFreq(note));
   // Fade it in
   osc.fade(0.5,0.2);
@@ -59,8 +77,7 @@ function playNote(note, duration) {
 }
 
 function draw() {
-/*  mySound.setVolume(0.1);
-  mySound.play();*/
+
   // If we are autoplaying and it's time for the next note
   if (autoplay && millis() > trigger){
     playNote(notes[song[index].note], song[index].duration);
@@ -104,12 +121,56 @@ function draw() {
 }
 
 // When we click
-function mousePressed(event) {
-  if(event.button == 0 && event.clientX < width && event.clientY < height) {
+function mousePressed(){
+
+
+
+
+osc.start();
+osc.amp(0);
+
+  //if(event.button == 0 && event.clientX < width && event.clientY < height) {
     // Map mouse to the key index
-    let key = floor(map(mouseX, 0, width, 0, notes.length));
-    playNote(notes[key]);
+    //let key = floor(map(mouseX, 0, width, 0, notes.length));
+    //playNote(notes[key]);
+
+//  }
+  if (mouseX <= 150)  {
+    mySound1.play();
+    alert("you just scared the Elephant");
+
   }
+  if (mouseX >= 200 && mouseX<=250)  {
+    mySound2.play();
+    alert("NO you just broke the piano");
+
+  }
+  if (mouseX >= 300 && mouseX<=350)  {
+    mySound3.play();
+    alert("Have a wonderful day ");
+
+  }
+  if (mouseX >= 400 && mouseX<=500)  {
+    mySound4.play();
+    alert("welcome to the premere");
+
+  }
+  if (mouseX >= 550 && mouseX<=650)  {
+    mySound5.play();
+    alert("You have just exploded the tallest building");
+
+  }
+  if (mouseX >= 700 && mouseX<=800)  {
+    mySound6.play();
+    alert("Congrats you just won your first race!");
+
+  }
+  if (mouseX >= 850 && mouseX<=1000)  {
+    mySound7.play();
+    alert("You just flushed the toilet");
+
+  }
+
 }
 
 // Fade it out when we release
