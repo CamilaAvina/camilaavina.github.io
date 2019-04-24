@@ -1,3 +1,14 @@
 body{
 background-color: pink;
 }
+.text{
+  height: 150px;
+  width: 50;
+  text-align: center;
+  color: green;
+}
+h1{
+  color: black;
+  height: 250px;
+  
+}
