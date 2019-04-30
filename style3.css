@@ -2,15 +2,18 @@ body{
 background-color: pink;
 }
 .text{
-  height: 150px;
+  /*height: 150px;*/
   width: 50;
   text-align: center;
   color: green;
+
 }
 h1{
   color: black;
-  height: 250px;
-
+  /*height: 100px;*/
+  font-size: 50px;
+  padding: auto;
+  text-align: center;
 }
 p{
   font-size: 50px;
@@ -22,4 +25,8 @@ p{
 span:hover{
   background-color: black;
 
+}
+a{
+text-decoration: none;
+color: green;
 }
