@@ -10,5 +10,16 @@ background-color: pink;
 h1{
   color: black;
   height: 250px;
-  
+
+}
+p{
+  font-size: 50px;
+  line-height: .4;
+  padding: auto;
+  text-align: justify;
+
+}
+span:hover{
+  background-color: black;
+
 }
