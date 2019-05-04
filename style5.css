@@ -1,18 +1,9 @@
 body{
-  background-color: RosyBrown;
-text-align: center;
+background-color: pink;
 }
-
 a{
   text-decoration: none;
   color: maroon;
-}
-
-.text{
-  /*height: 150px;*/
-  width: 50;
-  text-align: center;
-  color: green;
 }
 
 h1{
@@ -22,14 +13,15 @@ h1{
   text-align: center;
 }
 
+
 p{
   font-size: 50px;
-  /*line-height: .4;*/
+/*  line-height: .4;*/
   padding: auto;
   text-align:center;
+  color: black;
 }
-
 span:hover{
-  background-color: black;
+  background-color: orange;
 
 }
