@@ -1,9 +1,10 @@
 body{
-background-color: pink;
+  background: linear-gradient(to bottom, #000099 0%, #ff6600 100%);
+
 }
 a{
   text-decoration: none;
-  color: maroon;
+  color: white;
 }
 
 h1{
@@ -12,9 +13,15 @@ h1{
   padding: auto;
   text-align: center;
 }
+h2{
+  font-size: 30px;
+  padding: auto;
+  text-align: center;
+}
 
 p{
   font-size: 50px;
+
   line-height: 2;
   padding: auto;
   text-align:center;
