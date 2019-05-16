@@ -188,6 +188,29 @@ p{
 }
 
 #vid{
-  padding-left: 600px;
+ padding-left: 300px;
   padding-right: 150px;
+}
+
+#video{
+  padding-top: 250px;
+  padding-left: 300px;
+  padding-right: 150px;
+
+}
+
+
+#video2{
+  padding-top: 275px;
+  padding-left: 300px;
+  padding-right: 150px;
+
+}
+#photo2{
+  padding-top:300px;
+}
+
+#website{
+padding-top: 325px;
+
 }
