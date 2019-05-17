@@ -177,9 +177,9 @@ p{
   #art{
      text-align: center;
      font-family: 'Open Sans', sans-serif;
-     font-size: 50px;
-     letter-spacing: -3px;
-     line-height: 0.5;
+     font-size: 20px;
+     letter-spacing: -2px;
+     line-height:1.0 ;
      color: #dc143c;
      }
 #sound{
@@ -207,12 +207,14 @@ p{
 
 }
 #photo2{
-  padding-top:270px;
-  padding-left: 100px;
+  padding-left: 200px;
+  padding-right: 100px;
+  text-align: center;
 }
 
+
 #website{
-padding-top: 290px;
+
 padding-left: 100px;
 }
 
