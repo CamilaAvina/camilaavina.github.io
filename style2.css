@@ -143,11 +143,11 @@ p{
    font-family: 'Open Sans', sans-serif;
   color: #3cb371;
   text-transform: uppercase;
-  text-align: center;
+  text-align:center;
   font-size: 50px;
   font-weight: 50;
-  letter-spacing: -3px;
-  line-height: 0.5;
+  letter-spacing: -4px;
+  line-height: 1.0;
 
   }
 
@@ -194,23 +194,33 @@ p{
 
 #video{
   padding-top: 250px;
-  padding-left: 300px;
-  padding-right: 150px;
+  padding-left: 350px;
+  padding-right: 250px;
 
 }
 
 
 #video2{
-  padding-top: 275px;
-  padding-left: 300px;
-  padding-right: 150px;
+/*  padding-top: 250px;*/
+  padding-left: 350px;
+  padding-right: 250px;
 
 }
 #photo2{
-  padding-top:300px;
+  padding-top:270px;
+  padding-left: 100px;
 }
 
 #website{
-padding-top: 325px;
+padding-top: 290px;
+padding-left: 100px;
+}
+
+
+span{
+font-size: 30px;
+line-height: normal;
+letter-spacing: -2px;
+text-align: center;
 
 }
