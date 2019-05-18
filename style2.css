@@ -115,13 +115,11 @@ body {
 
 
 h2{
+  padding-top: 475px;
   font-size: 60px;
   color: #ec7063;
  text-align: center;
-  height: auto;
-  width: auto;
-  margin:  300px,430px;
-  padding: 400px;
+ padding-bottom: 350px;
 }
 
 footer {
