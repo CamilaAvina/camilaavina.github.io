@@ -1,6 +1,13 @@
 .container{
-
+  	width: 85%;
+  	height: auto;
+  	background-color: #FF99FF;
+  	margin: 0 auto;
+  	padding: 0 50px;
 }
 .text{
-  
+  height: auto;
+	text-align: center;
+	margin: 5% auto;
+	background-color: pink;
 }
