@@ -1,7 +1,7 @@
 .container{
   	width: 85%;
   	height: auto;
-  	background-color: #FF99FF;
+  	background-color: grey;
   	margin: 0 auto;
   	padding: 0 50px;
 }
@@ -9,5 +9,5 @@
   height: auto;
 	text-align: center;
 	margin: 5% auto;
-	background-color: pink;
+	background-color: white;
 }
