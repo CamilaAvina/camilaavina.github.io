@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title> Hispanic Community Affairs Council</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+.mySlides {display:none;}
+</style>
   </head>
 
   <body>
@@ -12,10 +15,39 @@
 
       <div class="text">
         <div class="menu">
-          <a href="/" id="logo"> Hispanic Community Affairs Council</a>
-          <h1><img src="img/images16.png" width="290" height="285"></h1>
 
+          <h1><img src="image17.jpg"width="800" height="285"> </h1>
+
+
+          <ul id="menu">
+            <li><a href="web.html">Home</a></li>
+              <li><a href="scholarship.html">Scholarship</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
         </div>
+        <div class="slideshow">
+          <img class="mySlides" src="image1.jpg"  width="560" height="300">
+          <img  class="mySlides"src="image17.jpg" width="560" height="300">
+          <img class="mySlides" src="image2.jpg" width="560" height="300">
+        </div>
+
+        <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}
+          x[myIndex-1].style.display = "block";
+          setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+        </script>
+
       </div>
 
 
