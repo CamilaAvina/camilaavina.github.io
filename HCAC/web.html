@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title> Hispanic Community Affairs Council</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-.mySlides {display:none;}
-</style>
-  </head>
 
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title> Hispanic Community Affairs Council</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    .mySlides {
+      display: none;
+    }
+  </style>
+</head>
 
-    <div class="container">
+<body>
 
-      <div class="text">
-        <div class="menu">
+  <div class="container">
 
-          <h1><img src="image17.jpg"width="800" height="285"> </h1>
+    <div class="text">
+      <div class="menu">
+
+        <h1><img src="image17.jpg" width="800" height="285"> </h1>
 
 
-          <ul id="menu">
-            <li><a href="web.html">Home</a></li>
-              <li><a href="scholarship.html">Scholarship</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="slideshow">
-          <img class="mySlides" src="image1.jpg"  width="560" height="300">
-          <img  class="mySlides"src="image17.jpg" width="560" height="300">
-          <img class="mySlides" src="image2.jpg" width="560" height="300">
-        </div>
 
-        <script>
+        <ul id="menu">
+          <li><a href="web.html">Home</a></li>
+          <li><a href="scholarship.html">Scholarship</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <span><p>The mission of the Hispanic Community Affairs Council (HCAC)
+        is to promote the value of <strong>education</strong>, <strong>cultural diversity</strong>, and
+      <strong> community involvement</strong>. </p><p>HCAC strives to increase the number of Latinos
+        who successfully graduate from college by awarding scholarships to
+        academically-talented and highly-motivated students in need of financial
+        assistance. </p></span>
+
+      <div class="slideshow">
+        <img class="mySlides" src="image1.jpg" width="560" height="300">
+        <img class="mySlides" src="image17.jpg" width="560" height="300">
+        <img class="mySlides" src="image2.jpg" width="560" height="300">
+      </div>
+
+      <script>
         var myIndex = 0;
         carousel();
 
@@ -42,17 +54,41 @@
             x[i].style.display = "none";
           }
           myIndex++;
-          if (myIndex > x.length) {myIndex = 1}
-          x[myIndex-1].style.display = "block";
+          if (myIndex > x.length) {
+            myIndex = 1
+          }
+          x[myIndex - 1].style.display = "block";
           setTimeout(carousel, 2000); // Change image every 2 seconds
         }
-        </script>
+      </script>
 
+
+      <div class="about">
+      <h2> About Us </h2>
+      <p><strong>Logo</strong></p>
+      <p> The path in the logo represents the students’ academic journey
+         towards success. At the end of the path there is a graduation cap,
+         which symbolizes achievement of a higher education. The sun embodies
+         hope and a bright future. The eagle represents leadership, great power
+         and balance, dignity with grace, intuition, and a creative spirit
+         achieved through knowledge and hard work. Eagles are also a symbol of
+         community and cooperative unity amongst a diverse group.</p><p>HCAC is proud
+         to support and give hope to young Latinos who want to walk the path
+         towards higher education and success. Higher education creates
+         countless opportunities resulting in a brighter future for our youth,
+         our families and our communities.</p>
       </div>
 
 
 
 
+
     </div>
-  </body>
+
+
+
+
+  </div>
+</body>
+
 </html>
