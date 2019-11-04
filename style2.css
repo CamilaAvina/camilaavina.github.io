@@ -207,7 +207,7 @@ p{
 #photo2{
   padding-left: 200px;
   padding-right: 100px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 
@@ -218,9 +218,10 @@ padding-left: 100px;
 
 
 span{
+  text-align: center;
 font-size: 30px;
 line-height: normal;
 letter-spacing: -2px;
-text-align: center;
+
 
 }
