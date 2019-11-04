@@ -142,10 +142,10 @@ p{
   color: #3cb371;
   text-transform: uppercase;
   text-align:center;
-  font-size: 50px;
-  font-weight: 50;
-  letter-spacing: -4px;
-  line-height: 1.0;
+  font-size: 30px;
+  font-weight: 30px;
+  letter-spacing: -2px;
+  line-height: 1.3;
 
   }
 
@@ -186,13 +186,13 @@ p{
 }
 
 #vid{
- padding-left: 300px;
+ padding-left: 355px;
   padding-right: 150px;
 }
 
 #video{
   padding-top: 250px;
-  padding-left: 350px;
+  padding-left: 400px;
   padding-right: 250px;
 
 }
@@ -200,7 +200,7 @@ p{
 
 #video2{
 /*  padding-top: 250px;*/
-  padding-left: 350px;
+  padding-left: 400px;
   padding-right: 250px;
 
 }
